@@ -1,0 +1,26 @@
+server:
+  port: 8181
+spring:
+  datasource:
+    username: someuser
+    url: jdbc:postgresql://localhost:5432/somedb
+    password: somepass
+  jackson:
+    serialization:
+      fail-on-empty-beans: 'false'
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: update
+  output.ansi.enabled: ALWAYS
+  security:
+    oauth2:
+      resource-server:
+        jwt:
+          issuer-uri: http://localhost:8088
+
+CHARACTER_API: https://rickandmortyapi.com/api/character/
+LOCATION_API: https://rickandmortyapi.com/api/location/
+EPISODE_API: https://rickandmortyapi.com/api/episode/
